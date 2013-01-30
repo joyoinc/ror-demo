@@ -1,4 +1,17 @@
 Demo::Application.routes.draw do
+  root to: 'static#home'
+
+  get "static/home"
+
+#  get "static/help"
+  match '/help', to: 'static#help'
+
+#  get "static/about"
+  match '/about', to: 'static#about'
+
+#  get "static/contact"
+  match '/contact', to: 'static#contact'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
