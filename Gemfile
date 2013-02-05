@@ -7,8 +7,6 @@ gem 'bootstrap-sass', '2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'mysql2'
 
 gem 'annotate', '2.5.0'
 
@@ -22,6 +20,13 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '2.11.0'
+  gem 'capybara', '1.1.2'
+#gem 'sqlite3'
+  gem 'mysql2'
 end
 
 gem 'jquery-rails'

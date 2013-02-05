@@ -3,13 +3,13 @@ Demo::Application.routes.draw do
 
   get "static/home"
 
-#  get "static/help"
+  get "static/help"
   match '/help', to: 'static#help'
 
-#  get "static/about"
+  get "static/about"
   match '/about', to: 'static#about'
 
-#  get "static/contact"
+  get "static/contact"
   match '/contact', to: 'static#contact'
 
   # The priority is based upon order of creation:
