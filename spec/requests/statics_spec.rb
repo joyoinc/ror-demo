@@ -6,7 +6,7 @@ describe "Statics" do
 
   describe "Home Page" do
     it "should have title 'Home' " do
-      visit '/static/home'
+      visit root_path
       page.should have_content('Sample App')
       page.should have_selector('title', :text => "#{base_title} | Home")
     end
@@ -14,7 +14,7 @@ describe "Statics" do
 
   describe "Help Page" do
     it "should have title 'Help' " do
-      visit '/static/help'
+      visit help_path
       page.should have_content('help')
       page.should have_selector('title', :text => "#{base_title} | Help")
     end
@@ -22,7 +22,7 @@ describe "Statics" do
 
   describe "Contact Page" do
     it "should have title 'Contact' " do
-      visit '/static/contact'
+      visit contact_path
       page.should have_content('contact')
       page.should have_selector('title', :text => "#{base_title} | Contact")
     end
