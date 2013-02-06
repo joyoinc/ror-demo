@@ -1,4 +1,7 @@
 Demo::Application.routes.draw do
+  get "users/new"
+  match '/signup', to: 'users#new'
+
   root to: 'static#home'
 
   get "static/home"
