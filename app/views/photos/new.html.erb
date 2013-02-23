@@ -1,0 +1,13 @@
+<h1>New photo</h1>
+
+<%= form_for(@photo, :url=>{:action=>'create'}, :html=>{:multipart=>true}) do |f| %>
+
+  <%= f.label :tags %>
+  <%= f.text_field :tags %>
+
+  <%= f.file_field :image_file %>
+
+  <%= link_to 'Back', photos_path, class: "btn btn-large btn-primary" %>
+  <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+
+<% end %>

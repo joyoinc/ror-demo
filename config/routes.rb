@@ -1,4 +1,7 @@
 Demo::Application.routes.draw do
+  resources :photos
+  match 'photos/preview/:id' => 'photos#decode_image'
+
   resources :users
 
   match '/signup', to: 'users#new'
