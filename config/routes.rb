@@ -1,20 +1,9 @@
 Demo::Application.routes.draw do
-  resources :users
-
-  match '/signup', to: 'users#new'
-
-  root to: 'static#home'
 
   get "static/home"
-
   get "static/help"
-  match '/help', to: 'static#help'
-
   get "static/about"
-  match '/about', to: 'static#about'
-
   get "static/contact"
-  match '/contact', to: 'static#contact'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -22,6 +11,12 @@ Demo::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  match '/contact', to: 'static#contact'
+  match '/about', to: 'static#about'
+  match '/help', to: 'static#help'
+  match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -29,6 +24,9 @@ Demo::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy ]
+
 
   # Sample resource route with options:
   #   resources :products do
@@ -66,6 +64,7 @@ Demo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root to: 'static#home'
 
   # See how all your routes lay out with "rake routes"
 
