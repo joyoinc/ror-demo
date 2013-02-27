@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Token:</b>
+  <%= @photo.token %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @photo.tags %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= link_to image_tag("/photos/preview/#{@photo.id}", :alt=>"Image", :size=>"50x50"), "/photos/preview/#{@photo.id}" %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

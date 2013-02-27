@@ -24,6 +24,8 @@ Demo::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :photos
+  match 'photos/preview/:id' => 'photos#decode_image'
   resources :users
   resources :sessions, only: [:new, :create, :destroy ]
 
